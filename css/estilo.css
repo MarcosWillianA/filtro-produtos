@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+#container {
+    padding: 10px;
+    border: 1px solid red;
+}
+
+#buscador {
+    border: 1px solid orangered;
+    padding: 10px;
+}
+
+#campo-busca {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+#buscar-produto {
+    width: 100%;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+
+#buscar-produto:focus {
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+#botao-buscar {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2563EB;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+#botao-buscar:active {
+    background-color: #1E40AF;
+}
+
+#opcoes-busca {
+    padding: 10px 0;
+    border: 1px solid orange;
+}
+
+.botoes-busca {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #2563EB;
+    color: #2563EB;
+}
+
+.botoes-busca-selecionado {
+    background-color: #2563EB;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+}
+
+

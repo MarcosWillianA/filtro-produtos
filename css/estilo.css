@@ -76,4 +76,20 @@ h2 {
     text-align: center;
 }
 
+#produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.cartao-produto {
+    max-width: 320px;
+    padding: 10px;
+    border: 1px solid orangered;
+    text-transform: capitalize;
+}
+
+.cartao-produto img {
+    display: block;
+    margin: auto;
+}
 

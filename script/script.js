@@ -73,27 +73,21 @@ const listaDeProdutos = [
     }
 ]
 
-class CardProdutos {
-    constructor(nome, tipo, preco, imagem) {
-        this.nome = nome;
-        this.tipo = tipo;
-        this.preco = preco;
-        this.imagem = imagem;
-    }
-
-    exibirProduto() {
+    function exibirProdutos() {
         listaDeProdutos.forEach(produto => {
             const cartaoProduto = document.createElement('div');
             cartaoProduto.classList.add('cartao-produto');
-            const imagemProduto = document.createElement('img');
-            imagemProduto.src = produto.imagem;
+            const imagemDoProduto = document.createElement('img');
+            imagemDoProduto.src = produto.imagem;
             const nomeDoProduto = document.createElement('h3');
             nomeDoProduto.innerHTML = produto.nome;
-            const precoDoProduto = document.createElement('p');
-            precoDoProduto.innerHTML = `$${produto.preco}`; 
+            const precoDoproduto = document.createElement('p');
+            precoDoproduto.innerHTML = `$${produto.preco}`;
+            produtos.appendChild(cartaoProduto);
+            cartaoProduto.appendChild(imagemDoProduto);
+            cartaoProduto.appendChild(nomeDoProduto);
+            cartaoProduto.appendChild(precoDoproduto);
         })
     }
-}
 
-const cartao01 = new CardProdutos ()
-cartao01.exibirProduto();
+    exibirProdutos();

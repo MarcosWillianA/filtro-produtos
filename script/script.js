@@ -1,8 +1,10 @@
 const buscarProduto = document.querySelector('#buscar-produto');
 const botaoBuscar = document.querySelector('#botao-buscar');
 const botaoDeBusca = document.querySelectorAll('#botoes-busca');
+const opcoesBusca = document.querySelector('#opcoes-busca');
+const produtos = document.querySelector('#produtos');
 
-const produtos = [
+const listaDeProdutos = [
     {
         nome: 'boné verde',
         tipo: 'boné',
@@ -37,7 +39,7 @@ const produtos = [
         nome: 'camisa listrada',
         tipo: 'camisa',
         preco: 69.99,
-        imagem: 'img/camisa-listrada0001.png'
+        imagem: 'img/camisa-listrada001.png'
     },
     {
         nome: 'camisa xadrez',
@@ -70,3 +72,28 @@ const produtos = [
         imagem: 'img/jaqueta-couro-preta001.png'
     }
 ]
+
+class CardProdutos {
+    constructor(nome, tipo, preco, imagem) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.preco = preco;
+        this.imagem = imagem;
+    }
+
+    exibirProduto() {
+        listaDeProdutos.forEach(produto => {
+            const cartaoProduto = document.createElement('div');
+            cartaoProduto.classList.add('cartao-produto');
+            const imagemProduto = document.createElement('img');
+            imagemProduto.src = produto.imagem;
+            const nomeDoProduto = document.createElement('h3');
+            nomeDoProduto.innerHTML = produto.nome;
+            const precoDoProduto = document.createElement('p');
+            precoDoProduto.innerHTML = `$${produto.preco}`; 
+        })
+    }
+}
+
+const cartao01 = new CardProdutos ()
+cartao01.exibirProduto();

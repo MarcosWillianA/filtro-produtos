@@ -74,9 +74,10 @@ const listaDeProdutos = [
 ]
 
     function exibirProdutos() {
-        listaDeProdutos.forEach(produto => {
+        listaDeProdutos.forEach((produto, index) => {
             const cartaoProduto = document.createElement('div');
             cartaoProduto.classList.add('cartao-produto');
+            cartaoProduto.id = `cartao0${index}`
             const imagemDoProduto = document.createElement('img');
             imagemDoProduto.src = produto.imagem;
             const nomeDoProduto = document.createElement('h3');
@@ -91,3 +92,17 @@ const listaDeProdutos = [
     }
 
     exibirProdutos();
+    cartoesDeProduto = document.querySelectorAll('.cartao-produto');
+
+    /*function buscarProdutos(itemPesquisado) {
+        botaoBuscar.addEventListener('click', () => {
+            itemPesquisado = buscarProduto.value;
+            produtos.forEach(cartao => {
+                cartao.classList.contain(!itemPesquisado);
+                cartao.style.display = 'none'; 
+            })
+        })
+    }
+        */
+
+    // PRA AMANHÃ: ASSOCIAR O OBJETO AOS ITENS ADICIONADOS DINAMICAMENTE. 

@@ -102,17 +102,14 @@ const listaDeProdutos = [
     function buscarProdutos(itemPesquisado) {
         botaoBuscar.addEventListener('click', () => {
             itemPesquisado = buscarProduto.value;
+            cartoesDeProduto.forEach(cartao => {
+                cartao.style.display = 'none';
+            })
             listaDeProdutos.forEach((produto, indice) => {
                 if (itemPesquisado === produto.nome || itemPesquisado === produto.tipo) {
-                    const produtosEncontrados = indice;
-                    console.log(produtosEncontrados);
-                    cartoesDeProduto.forEach((cartao, indice) => {
-                        if (produtosEncontrados != indice) {
-                            cartao.style.display = 'none';
-                        }
-                    })
-                } 
-                
+                    console.log(produto.nome);
+                    cartoesDeProduto[indice].style.display = 'block';
+                }                 
             })
         })
 

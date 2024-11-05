@@ -84,25 +84,42 @@ const listaDeProdutos = [
             nomeDoProduto.innerHTML = produto.nome;
             const precoDoproduto = document.createElement('p');
             precoDoproduto.innerHTML = `$${produto.preco}`;
+            const indexProduto = document.createElement('span'); 
+            indexProduto.innerHTML = index;
+            indexProduto.style.display = 'none';
             produtos.appendChild(cartaoProduto);
             cartaoProduto.appendChild(imagemDoProduto);
             cartaoProduto.appendChild(nomeDoProduto);
             cartaoProduto.appendChild(precoDoproduto);
+            cartaoProduto.appendChild(indexProduto);
         })
     }
 
     exibirProdutos();
     cartoesDeProduto = document.querySelectorAll('.cartao-produto');
 
-    /*function buscarProdutos(itemPesquisado) {
+    function buscarProdutos(itemPesquisado) {
         botaoBuscar.addEventListener('click', () => {
             itemPesquisado = buscarProduto.value;
-            produtos.forEach(cartao => {
-                cartao.classList.contain(!itemPesquisado);
-                cartao.style.display = 'none'; 
+            listaDeProdutos.forEach((produto, indice) => {
+                if (itemPesquisado != produto.nome || itemPesquisado != produto.tipo) {
+                    console.log('Nenhum resultado foi encontrado!');
+                    produtos.innerHTML = 'Nenhum resultado foi encontrado.'
+                    cartoesDeProduto.forEach(cartao => {
+                        cartao.style.display = 'none';
+                    })
+                    return;
+                } else {
+                    produto.
+                }
+                
             })
         })
     }
-        */
 
+    buscarProdutos();
+
+    
+    
+    
     // PRA AMANHÃ: ASSOCIAR O OBJETO AOS ITENS ADICIONADOS DINAMICAMENTE. 

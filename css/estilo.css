@@ -24,6 +24,7 @@ body {
 #campo-busca {
     display: flex;
     justify-content: space-evenly;
+    max-width: 640px;
     padding: 10px 0;
 }
 

@@ -97,24 +97,26 @@ const listaDeProdutos = [
 
     exibirProdutos();
     cartoesDeProduto = document.querySelectorAll('.cartao-produto');
+    spanIndex = document.querySelectorAll('span');
 
     function buscarProdutos(itemPesquisado) {
         botaoBuscar.addEventListener('click', () => {
             itemPesquisado = buscarProduto.value;
             listaDeProdutos.forEach((produto, indice) => {
-                if (itemPesquisado != produto.nome || itemPesquisado != produto.tipo) {
-                    console.log('Nenhum resultado foi encontrado!');
-                    produtos.innerHTML = 'Nenhum resultado foi encontrado.'
-                    cartoesDeProduto.forEach(cartao => {
-                        cartao.style.display = 'none';
+                if (itemPesquisado === produto.nome || itemPesquisado === produto.tipo) {
+                    const produtosEncontrados = indice;
+                    console.log(produtosEncontrados);
+                    cartoesDeProduto.forEach((cartao, indice) => {
+                        if (produtosEncontrados != indice) {
+                            cartao.style.display = 'none';
+                        }
                     })
-                    return;
-                } else {
-                    produto.
-                }
+                } 
                 
             })
         })
+
+        
     }
 
     buscarProdutos();

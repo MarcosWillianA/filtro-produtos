@@ -1,6 +1,5 @@
 const buscarProduto = document.querySelector('#buscar-produto');
 const botaoBuscar = document.querySelector('#botao-buscar');
-const filtroBusca = document.querySelectorAll('.filtro-busca');
 const opcoesBusca = document.querySelector('#opcoes-busca');
 const produtos = document.querySelector('#produtos');
 
@@ -112,9 +111,21 @@ const listaDeProdutos = [
         })
     }
 
+    function aplicarFiltros() {
+        const filtroBusca = document.querySelectorAll('.filtro-busca');
+        console.log(filtroBusca);
+        filtroBusca.forEach(filtro => {
+            filtro.addEventListener('click', () => {
+                console.log('clicou hein, lá ele')
+            })
+        })
+    } 
+
     exibirProdutos(listaDeProdutos);
     exibirFiltros();
+    aplicarFiltros();
     buscarUmProduto();
+
 
     
     

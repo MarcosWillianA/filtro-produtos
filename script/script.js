@@ -113,10 +113,10 @@ const listaDeProdutos = [
 
     function aplicarFiltros() {
         const filtroBusca = document.querySelectorAll('.filtro-busca');
-        console.log(filtroBusca);
         filtroBusca.forEach(filtro => {
             filtro.addEventListener('click', () => {
-                console.log('clicou hein, lá ele')
+                const produtosFiltrados = listaDeProdutos.filter(produto => produto.nome.toLowerCase().includes(filtro.innerHTML));
+                exibirProdutos(produtosFiltrados);
             })
         })
     } 

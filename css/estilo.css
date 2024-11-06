@@ -13,11 +13,9 @@ body {
 
 #container {
     padding: 10px;
-    border: 1px solid red;
 }
 
 #buscador {
-    border: 1px solid orangered;
     padding: 10px;
 }
 
@@ -57,7 +55,6 @@ body {
 
 #opcoes-busca {
     padding: 10px 0;
-    border: 1px solid orange;
 }
 
 .filtro-busca {
@@ -80,13 +77,15 @@ h2 {
 
 #produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 10px;
 }
 
 .cartao-produto {
     max-width: 320px;
     padding: 10px;
-    border: 1px solid orangered;
+    background-color: #F3F4F6;
+    box-shadow: 1px 1px 1px #E7E5E4;
     text-transform: capitalize;
 }
 
@@ -95,3 +94,10 @@ h2 {
     margin: auto;
 }
 
+@media (min-width: 640px) {
+    #produtos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+    }
+}

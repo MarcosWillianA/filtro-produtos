@@ -60,7 +60,7 @@ body {
     border: 1px solid orange;
 }
 
-.botoes-busca {
+.filtro-busca {
     margin: 5px 0;
     padding: 10px;
     border-radius: 20px;
@@ -68,7 +68,7 @@ body {
     color: #2563EB;
 }
 
-.botoes-busca-selecionado {
+.filtro-busca-selecionado {
     background-color: #2563EB;
     color: #fff;
 }

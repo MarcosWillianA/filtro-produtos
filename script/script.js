@@ -1,6 +1,6 @@
 const buscarProduto = document.querySelector('#buscar-produto');
 const botaoBuscar = document.querySelector('#botao-buscar');
-const botaoDeBusca = document.querySelectorAll('#botoes-busca');
+const filtroBusca = document.querySelectorAll('#filtro-busca');
 const opcoesBusca = document.querySelector('#opcoes-busca');
 const produtos = document.querySelector('#produtos');
 
@@ -72,54 +72,36 @@ const listaDeProdutos = [
         imagem: 'img/jaqueta-couro-preta001.png'
     }
 ]
+    
+    function exibirProdutos(listaProdutos) {
+        produtos.innerHTML = '';
 
-    function exibirProdutos() {
-        listaDeProdutos.forEach((produto, index) => {
+        listaProdutos.forEach(produto => {
             const cartaoProduto = document.createElement('div');
             cartaoProduto.classList.add('cartao-produto');
-            cartaoProduto.id = `cartao0${index}`
-            const imagemDoProduto = document.createElement('img');
-            imagemDoProduto.src = produto.imagem;
-            const nomeDoProduto = document.createElement('h3');
-            nomeDoProduto.innerHTML = produto.nome;
-            const precoDoproduto = document.createElement('p');
-            precoDoproduto.innerHTML = `$${produto.preco}`;
-            const indexProduto = document.createElement('span'); 
-            indexProduto.innerHTML = index;
-            indexProduto.style.display = 'none';
+            cartaoProduto.innerHTML = `
+                <img src= "${produto.imagem}" alt="${produto.nome}" />
+                <h3>${produto.nome}</h3>
+                <p>$${produto.preco.toFixed(2)}</p>
+            `;
+
             produtos.appendChild(cartaoProduto);
-            cartaoProduto.appendChild(imagemDoProduto);
-            cartaoProduto.appendChild(nomeDoProduto);
-            cartaoProduto.appendChild(precoDoproduto);
-            cartaoProduto.appendChild(indexProduto);
-        })
+        });
     }
 
-    exibirProdutos();
-    cartoesDeProduto = document.querySelectorAll('.cartao-produto');
-    spanIndex = document.querySelectorAll('span');
-
-    function buscarProdutos(itemPesquisado) {
+    function buscarUmProduto(busca) {
         botaoBuscar.addEventListener('click', () => {
-            itemPesquisado = buscarProduto.value;
-            cartoesDeProduto.forEach(cartao => {
-                cartao.style.display = 'none';
-            })
-            listaDeProdutos.forEach((produto, indice) => {
-                if (itemPesquisado === produto.nome || itemPesquisado === produto.tipo) {
-                    console.log(produto.nome);
-                    cartoesDeProduto[indice].style.display = 'block';
-                }                 
-            })
+            busca = buscarProduto.value.toLowerCase();
+            const produtosFiltrados = listaDeProdutos.filter(produto => produto.nome.toLowerCase().includes(busca));
+            exibirProdutos(produtosFiltrados);
+            if (produtosFiltrados.length === 0) {
+                produtos.innerHTML = 'Nenhum produto foi encontrado.' 
+            }
         })
-
-        
     }
 
-    buscarProdutos();
+    exibirProdutos(listaDeProdutos);
+    buscarUmProduto();
+    
 
     
-    
-    
-    // PRA AMANHÃ: TALVEZ EU DEVA CRIAR PEQUENAS FUNÇÕES, CADA UMA FAZENDO UMA COISA E DE ALGUMA FORMA OBTENDO RETORNOS DENTRO DE OUTRAS.
-    // INFELIZMENTE, MTO DISTRAÍDO HOJE, ESPERO QUE AMANHÃ O DIA SEJA MAIS PRODUTIVO. 

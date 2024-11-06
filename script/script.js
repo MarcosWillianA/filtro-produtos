@@ -117,6 +117,9 @@ const listaDeProdutos = [
             filtro.addEventListener('click', () => {
                 const produtosFiltrados = listaDeProdutos.filter(produto => produto.nome.toLowerCase().includes(filtro.innerHTML));
                 exibirProdutos(produtosFiltrados);
+                if (filtro.innerHTML === 'Todos') {
+                    exibirProdutos(listaDeProdutos);
+                }
             })
         })
     } 

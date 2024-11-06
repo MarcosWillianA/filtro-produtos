@@ -61,11 +61,12 @@ body {
 }
 
 .filtro-busca {
-    margin: 5px 0;
+    margin: 5px 5px 5px 0;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #2563EB;
     color: #2563EB;
+    text-transform: capitalize;
 }
 
 .filtro-busca-selecionado {

@@ -1,6 +1,6 @@
 const buscarProduto = document.querySelector('#buscar-produto');
 const botaoBuscar = document.querySelector('#botao-buscar');
-const filtroBusca = document.querySelectorAll('#filtro-busca');
+const filtroBusca = document.querySelectorAll('.filtro-busca');
 const opcoesBusca = document.querySelector('#opcoes-busca');
 const produtos = document.querySelector('#produtos');
 
@@ -100,8 +100,23 @@ const listaDeProdutos = [
         })
     }
 
+    function exibirFiltros() {
+        const tiposUnicos = new Set(listaDeProdutos.map(produto => produto.tipo));
+        const tiposDeProdutos = [...tiposUnicos];
+
+        tiposDeProdutos.forEach(tipo => {
+            const botaoDeFiltragem = document.createElement('button');
+            botaoDeFiltragem.innerHTML = tipo;
+            botaoDeFiltragem.classList.add('filtro-busca');
+            opcoesBusca.appendChild(botaoDeFiltragem);
+        })
+    }
+
     exibirProdutos(listaDeProdutos);
+    exibirFiltros();
     buscarUmProduto();
+
+    
     
 
     
